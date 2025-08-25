@@ -248,6 +248,17 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 - [Universal Robots](https://www.universal-robots.com/) - UR5e robot model
 - [MuJoCo Menagerie](https://github.com/deepmind/mujoco_menagerie) - High-quality robot models
 
+## Q&A and Evaluation
+
+For comprehensive system evaluation, performance benchmarks, and frequently asked questions, see our detailed [System Evaluation Report](./docs/systematic_evaluation.md).
+
+This document includes:
+- Complete system performance analysis
+- Benchmarking results and metrics
+- Troubleshooting guide
+- Common questions and answers
+- Technical deep-dive evaluations
+
 ## Support
 
 - Documentation: Check our comprehensive docs
