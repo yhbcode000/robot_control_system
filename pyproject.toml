@@ -1,10 +1,95 @@
 [project]
-name = "rob7101-lab"
-version = "0.1.0"
-description = "Add your description here"
+name = "robot-control-system"
+version = "1.0.0"
+description = "A comprehensive modular robot control system for UR5e robot arm with MuJoCo simulation"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
+license = { text = "MIT" }
+authors = [
+    { name = "Robot Control System Team", email = "your-email@example.com" }
+]
+maintainers = [
+    { name = "Robot Control System Team", email = "your-email@example.com" }
+]
+keywords = ["robotics", "control-system", "mujoco", "ur5e", "simulation"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+requires-python = ">=3.11"
+dependencies = [
+    "colorlog>=6.9.0",
+    "dataclasses-json>=0.6.7", 
+    "hydra-core>=1.3.2",
+    "mujoco>=3.3.5",
+    "numpy>=2.3.2",
+    "omegaconf>=2.3.0",
+    "pillow>=11.3.0",
+    "psutil>=7.0.0",
+    "pydantic>=2.11.7",
+    "pygame>=2.6.1",
+    "pynput>=1.8.1",
+    "scipy>=1.16.1",
+    "typing-extensions>=4.14.1"
+]
 
-[tool.uv.workspace]
-members = ["Lab-01/robot_control_system"]
+[project.urls]
+Homepage = "https://github.com/your-username/robot-control-system"
+Documentation = "https://github.com/your-username/robot-control-system/docs"
+Repository = "https://github.com/your-username/robot-control-system.git"
+"Bug Tracker" = "https://github.com/your-username/robot-control-system/issues"
+Changelog = "https://github.com/your-username/robot-control-system/releases"
+
+[project.scripts]
+robot-control = "main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0"
+]
+docs = [
+    "sphinx>=7.0.0",
+    "sphinx-rtd-theme>=1.3.0",
+    "myst-parser>=2.0.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["core", "modules", "adapters", "models", "tools", "utils"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests"
+]
