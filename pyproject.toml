@@ -3,7 +3,7 @@ name = "robot-control-system"
 version = "1.0.0"
 description = "A comprehensive modular robot control system for UR5e robot arm with MuJoCo simulation"
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 authors = [
     { name = "Robot Control System Team", email = "your-email@example.com" }
 ]
@@ -15,7 +15,7 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
