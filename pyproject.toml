@@ -1,0 +1,10 @@
+[project]
+name = "rob7101-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["Lab-01/robot_control_system"]

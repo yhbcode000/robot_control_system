@@ -1,0 +1,66 @@
+system:
+  update_rate: 100
+  memory_size: 1000
+modules:
+  watchdog:
+    enabled: true
+    check_interval: 1.0
+    heartbeat_timeout: 5.0
+    heartbeat_warning: 2.0
+    auto_restart: true
+    max_restart_attempts: 3
+    recovery_strategy: restart
+    recovery_cooldown: 5.0
+    alerts:
+      console: true
+      sound: false
+  input:
+    enabled: true
+    keyboard_mapping: wasd
+    mouse_sensitivity: 1.0
+    mouse_deadzone: 5
+    update_rate: 60
+    buffer_size: 100
+    heartbeat_interval: 0.5
+  sense:
+    enabled: true
+    filter_noise: true
+    update_rate: 50
+    heartbeat_interval: 0.5
+  plan:
+    enabled: true
+    algorithm: simple
+    update_rate: 30
+    heartbeat_interval: 0.5
+  act:
+    enabled: true
+    control_mode: position
+    update_rate: 100
+    heartbeat_interval: 0.5
+  output:
+    enabled: true
+    format: json
+    update_rate: 100
+    heartbeat_interval: 0.5
+adapter:
+  type: mujoco
+  model_path: robot_control_system/assets/robots/arm/ur5e.xml
+  render: true
+  physics_timestep: 0.001
+  control_timestep: 0.01
+  joint_names:
+  - shoulder_pan_joint
+  - shoulder_lift_joint
+  - elbow_joint
+  - wrist_1_joint
+  - wrist_2_joint
+  - wrist_3_joint
+  gripper_joint: null
+logging:
+  level: INFO
+  colorful: true
+  file: null
+display:
+  show_status: true
+  status_interval: 1.0
+  dashboard_enabled: true
